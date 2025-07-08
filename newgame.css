@@ -78,9 +78,9 @@
   
   .roadLines {
     height: 100px;
-    width: 100px;
+    width: 10px; /* Antes era 100px */
     background-color: white;
     position: absolute;
-    margin-left: 195px;
-  }
+    margin-left: 195px; /* já centraliza */
+  }  
   

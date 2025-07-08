@@ -80,7 +80,7 @@ function Play() {
     moveOpponents(car);
 
     if (keys.ArrowUp && player.y > (road.top + 70)) player.y -= player.speed;
-    if (keys.ArrowDown && player.y < (road.height - 75)) player.y += player.speed;
+    if (keys.ArrowDown && player.y < (road.bottom - 100)) player.y += player.speed;
     if (keys.ArrowRight && player.x < 350) player.x += player.speed;
     if (keys.ArrowLeft && player.x > 0) player.x -= player.speed;
 
@@ -103,7 +103,7 @@ function Play() {
 function moveLines() {
   let roadLines = document.querySelectorAll('.roadLines');
   roadLines.forEach(function(item) {
-    if (item.y >= 700) {
+    if (item.y >= window.innerHeight) {
       item.y -= 700;
     }
     item.y += player.speed;
@@ -118,7 +118,7 @@ function moveOpponents(car) {
       endGame();
     }
     if (item.y >= 750) {
-      item.y = -300;
+      item.y = -400;
       item.style.left = Math.floor(Math.random() * 350) + "px";
       item.style.backgroundColor = randomColor();
     }
